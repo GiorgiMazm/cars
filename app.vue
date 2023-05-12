@@ -1,11 +1,9 @@
 <script setup lang="ts">
-const q:string = "hi"
+let q: string = "hi";
 
-console.log(q)
+console.log("sf");
 </script>
 
 <template>
- <div class="bg-gray-700 h-screen">
-     kekich
- </div>
+  <div class="bg-gray-700 h-screen">kekich</div>
 </template>

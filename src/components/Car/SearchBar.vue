@@ -1,4 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const city = ref("");
+
+function searchHandler() {
+  if (!city.value.trim()) return;
+  navigateTo(`city/${city.value}/car`);
+}
+</script>
 
 <template>
   <div
@@ -8,7 +15,10 @@
       type="text"
       class="py-3 px-5 w-full text-2xl rounded-full focus:outline-none"
       placeholder="Search by city..."
+      v-model="city"
     />
-    <button class="bg-sky-500 px-10 text-white">Search</button>
+    <button @click="searchHandler" class="bg-sky-500 px-10 text-white">
+      Search
+    </button>
   </div>
 </template>

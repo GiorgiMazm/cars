@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const route = useRoute();
+
+useHead({
+  title: String(route.params.name).toUpperCase(),
+});
+</script>
 
 <template>
   <div

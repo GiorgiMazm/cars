@@ -1,8 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
-    <AppHeader />
-    <NuxtPage />
+  <div class="w-full">
+    <CarCard />
   </div>
 </template>
+
+<style scoped></style>

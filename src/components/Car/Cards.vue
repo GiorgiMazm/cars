@@ -1,8 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Car from "~/types/Car";
+
+const { cars }: Car[] = useCars();
+</script>
 
 <template>
   <div class="w-full">
-    <CarCard />
+    <CarCard v-for="car in cars" :key="car.id" :car="car" />
   </div>
 </template>
 

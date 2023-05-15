@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Car from "~/types/Car";
+
+const props = defineProps<{
+  car: Car;
+}>();
+</script>
 
 <template>
   <div

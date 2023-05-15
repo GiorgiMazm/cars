@@ -5,6 +5,13 @@ const route = useRoute();
 const { cars }: { cars: Car[] } = useCars();
 const car = cars.find((car) => car.id === parseInt(String(route.params.id)));
 
+if (!car) {
+  throw createError({
+    statusCode: 404,
+    message: `Car with id of ${route.params.id} does not exist`,
+  });
+}
+
 useHead({
   title: String(route.params.name).toUpperCase(),
 });

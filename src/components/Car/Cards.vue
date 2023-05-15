@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Car from "~/types/Car";
 
-const { cars }: Car[] = useCars();
+const { cars }: { cars: Car[] } = useCars();
 </script>
 
 <template>

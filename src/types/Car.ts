@@ -1,10 +1,10 @@
 export default interface Car {
   id: number;
   name: string;
-  price: number;
+  price: string;
   url: string;
   seats: number;
-  miles: number;
+  miles: string;
   features: string[];
   description: string;
 }

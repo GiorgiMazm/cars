@@ -16,7 +16,11 @@ function openCar() {
     @click="openCar"
   >
     <div class="flex h-full">
-      <img :src="car.url" alt="" class="w-[300px] h-full" />
+      <img
+        :src="props.car.url"
+        :alt="props.car.name || 'car image'"
+        class="w-[300px] h-full"
+      />
       <div class="p-4 flex flex-col">
         <div>
           <h1 class="text-2xl text-blue-700">{{ props.car.name }}</h1>
@@ -24,7 +28,7 @@ function openCar() {
             {{ props.car.description }}
           </p>
         </div>
-        <h1 class="mt-auto text-xl">{{ props.car.price }}$</h1>
+        <h1 class="mt-auto text-xl">${{ props.car.price }}</h1>
       </div>
     </div>
   </div>

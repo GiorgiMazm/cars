@@ -1,17 +1,22 @@
-<script setup lang="ts">
-const error: any = useError();
-const router = useRouter();
+<script setup>
+const error = useError();
+
+const handleError = () => {
+  clearError({
+    redirect: "/",
+  });
+};
 </script>
 
 <template>
-  <div>
-    <AppHeader />
-    <div class="text-center">
-      <h1 class="text-9xl mt-80 text-red-600">{{ error?.statusCode }}</h1>
-      <h2 class="text-6xl">{{ error?.message }}</h2>
-      <button @click="router.back()" class="text-4xl">Go back</button>
-    </div>
+  <div class="flex h-screen justify-center items-center flex-col">
+    <h1 class="text-9xl">{{ error.statusCode }}</h1>
+    <p class="mt-7 text-4xl">{{ error.message }}</p>
+    <button
+      @click="handleError"
+      class="rounded mt-7 text-2xl bg-blue-400 px-7 py-4 text-white"
+    >
+      Go Back
+    </button>
   </div>
 </template>
-
-<style scoped></style>

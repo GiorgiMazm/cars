@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 useHead({
   title: "Cartrader",
 });
@@ -9,3 +9,4 @@ useHead({
     <CarHero />
   </div>
 </template>
+  

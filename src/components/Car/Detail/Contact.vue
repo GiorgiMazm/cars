@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="mt-10">
     <div class="flex w-[600px] justify-between">
@@ -15,5 +13,3 @@
     </button>
   </div>
 </template>
-
-<style scoped></style>

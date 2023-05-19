@@ -1,10 +1,11 @@
-<script setup>
+<script setup lang="ts">
 const { cars } = useCars();
 
 const favorite = useLocalStorage("favorite", {});
 
-const handleFavorite = (id) => {
+const handleFavorite = (id: number) => {
   if (id in favorite.value) {
+    // @ts-ignore
     delete favorite.value[id];
   } else {
     favorite.value = {

@@ -1,15 +1,16 @@
-<script setup>
+<script setup lang="ts">
 const route = useRoute();
 const { cars } = useCars();
 const { toTitleCase } = useUtilities();
 useHead({
-  title: toTitleCase(route.params.name),
+  title: toTitleCase(String(route.params.name)),
 });
 
 definePageMeta({
+  // @ts-ignore
   validate({ params }) {
     const { cars } = useCars();
-    const car = cars.find((c) => c.id === parseInt(params.id));
+    const car = cars.find((c) => c.id === parseInt(String(params.id)));
     if (!car) {
       throw createError({
         statusCode: 404,
@@ -21,7 +22,7 @@ definePageMeta({
 
 const car = computed(() => {
   return cars.find((c) => {
-    return c.id === parseInt(route.params.id);
+    return c.id === parseInt(String(route.params.id));
   });
 });
 
@@ -32,8 +33,8 @@ definePageMeta({
 <template>
   <div>
     <CarDetailHero :car="car" />
-    <CarDetailAttributes :features="car.features" />
-    <CarDetailDescription :description="car.description" />
+    <CarDetailAttributes :features="car?.features" />
+    <CarDetailDescription :description="car?.description" />
     <CarDetailContact />
   </div>
 </template>

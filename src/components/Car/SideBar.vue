@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const { makes } = useCars();
 const modal = ref({
   make: false,
@@ -27,7 +27,7 @@ const priceRangeText = computed(() => {
   }
 });
 
-const updateModal = (key) => {
+const updateModal = (key: "location" | "make" | "price") => {
   modal.value[key] = !modal.value[key];
 };
 
@@ -44,7 +44,7 @@ const onChangeLocation = () => {
   city.value = "";
 };
 
-const onChangeMake = (make) => {
+const onChangeMake = (make: string) => {
   updateModal("make");
   navigateTo(`/city/${route.params.city}/car/${make}`);
 };
@@ -93,20 +93,7 @@ const onChangePrice = () => {
         {{ route.params.make || "Any" }}
       </h3>
       <div
-        class="
-          absolute
-          border
-          shadow
-          left-56
-          p-5
-          top-1
-          -m-1
-          w-[600px]
-          flex
-          justify-between
-          flex-wrap
-          bg-white
-        "
+        class="absolute border shadow left-56 p-5 top-1 -m-1 w-[600px] flex justify-between flex-wrap bg-white"
         v-if="modal.make"
       >
         <h4
@@ -154,6 +141,3 @@ const onChangePrice = () => {
     <!-- PRICE END -->
   </div>
 </template>
-
-
-

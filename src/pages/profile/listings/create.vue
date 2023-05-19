@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 definePageMeta({
   layout: "custom",
 });
@@ -20,8 +20,8 @@ const info = useState("adInfo", () => {
   };
 });
 
-const onChangeInput = (data, name) => {
-  info.value[name] = data;
+const onChangeInput = (data: string, name: string) => {
+  // info.value[name] = data;
 };
 
 const inputs = [
@@ -63,7 +63,6 @@ const inputs = [
   },
 ];
 </script>
-
 
 <template>
   <div>

@@ -1,10 +1,10 @@
-<script setup>
+<script setup lang="ts">
 const route = useRoute();
 const { toTitleCase } = useUtilities();
 useHead({
   title: `${
-    route.params.make ? toTitleCase(route.params.make) : "Cars"
-  } in ${toTitleCase(route.params.city)}`,
+    route.params.make ? toTitleCase(String(route.params.make)) : "Cars"
+  } in ${toTitleCase(String(route.params.city))}`,
 });
 
 definePageMeta({
@@ -36,4 +36,3 @@ definePageMeta({
     </div>
   </div>
 </template>
-  

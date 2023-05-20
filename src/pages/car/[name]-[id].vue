@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import UseFetchCar from "~/composables/useFetchCar";
+
 const route = useRoute();
-const { cars } = useCars();
 const { toTitleCase } = useUtilities();
 useHead({
   title: toTitleCase(String(route.params.name)),
@@ -20,11 +21,7 @@ definePageMeta({
   },
 });
 
-const car = computed(() => {
-  return cars.find((c) => {
-    return c.id === parseInt(String(route.params.id));
-  });
-});
+const car = await UseFetchCar(String(route.params.id));
 
 definePageMeta({
   layout: "custom",

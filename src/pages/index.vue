@@ -2,6 +2,8 @@
 useHead({
   title: "Cartrader",
 });
+
+console.log(useAppConfig().baseUrl);
 </script>
 
 <template>

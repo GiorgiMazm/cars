@@ -6,8 +6,8 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/supabase",
   ],
-  // @ts-ignore
   srcDir: "src/",
   // @ts-ignore
   buildModules: ["@nuxt/typescript-build"],
+  serverDir: "server/",
 });

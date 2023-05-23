@@ -3,7 +3,8 @@ useHead({
   title: "Cartrader",
 });
 
-console.log(useAppConfig().baseUrl);
+const { $myPlugin } = useNuxtApp();
+console.log($myPlugin());
 </script>
 
 <template>
